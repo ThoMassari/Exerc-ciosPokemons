@@ -1,7 +1,7 @@
 abstract class Pokemons (var nome: String, var genero: String, var life: Int, var nivel: Int, var ataque: Int){
 }
 
-    class PscieDuck () : PokemonsAtaqueSoco, PokemonsAgua, Pokemons("PscieDuck", "água", 10, 1, 2) {
+    class PscieDuck (nome:String, genero:String, life:Int, nivel: Int, ataque:Int) : PokemonsAtaqueSoco, PokemonsAgua, Pokemons(nome, genero, life, nivel, ataque) {
 
         override fun ataqueSoco() {
             println("$nome, usou seu ataque soco")
@@ -14,7 +14,7 @@ abstract class Pokemons (var nome: String, var genero: String, var life: Int, va
 
     }
 
-    class Charmander () : PokemonsAtaqueSoco, PokemonsFogo, Pokemons("Charmander", "fogo", 12, 1, 3) {
+    class Charmander (nome: String, genero:String, life:Int, nivel: Int, ataque:Int) : PokemonsAtaqueSoco, PokemonsFogo, Pokemons(nome, genero, life, nivel, ataque) {
 
         override fun ataqueSoco() {
             println("$nome, usou seu ataque soco")
@@ -28,7 +28,7 @@ abstract class Pokemons (var nome: String, var genero: String, var life: Int, va
 
     }
 
-    class Bulbassauro () : PokemonsAtaqueSoco, PokemonsPlanta, Pokemons("Bulbassauro", "terra", 10, 1, 2) {
+    class Bulbassauro (nome: String, genero:String, life:Int, nivel: Int, ataque:Int) : PokemonsAtaqueSoco, PokemonsPlanta, Pokemons(nome, genero, life, nivel, ataque) {
 
         override fun ataqueSoco() {
             println("$nome, usou seu ataque soco")
@@ -62,9 +62,9 @@ interface PokemonsPlanta{
 
 fun main(){
 
-    var pscieDuck = PscieDuck ()
-    var charmander = Charmander ()
-    var bulbassauro = Bulbassauro ()
+    var pscieDuck = PscieDuck ("PscieDuck", "água", 10, 1, 2)
+    var charmander = Charmander ("Charmander", "fogo", 12, 1, 3)
+    var bulbassauro = Bulbassauro ("Bulbassauro", "terra", 10, 1, 2)
 
     pscieDuck.ataqueSoco()
     pscieDuck.ataqueTipoAgua()
@@ -74,6 +74,7 @@ fun main(){
 
     bulbassauro.ataqueSoco()
     bulbassauro.ataqueTipoPlanta()
+
 
     }
 
